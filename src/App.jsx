@@ -1,8 +1,10 @@
 import { useState } from 'react'
-
+import UsersList from './components/UsersList'
 function App() {
   return (
-    <div>Hi</div>
+    <div className="container mx-auto">
+      <UsersList />
+    </div>
   )
 }
 
