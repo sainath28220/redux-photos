@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useThunk } from '../hooks/use-thunk';
 import { fetchUsers, addUser } from '../store';
-import usersListItem from './usersListItem';
+import UsersListItem from './UsersListItem';
 import Skeleton from './Skeleton';
 import Button from './Button';
 
@@ -31,6 +31,7 @@ const UsersList = () => {
     // .catch((err)=> setCreatingUserError(err))
     // .finally(()=>setIsCreatingUser(false));
   };
+
   let content;
   if (isLoadingUsers) {
     content =  <Skeleton times={6} className="h-10 w-full" />;
@@ -38,14 +39,7 @@ const UsersList = () => {
     content =  <div>error fetching data </div>;
   }else{
     content = data.map((user) => {
-      <usersListItem key={user.id} user={user} />
-      // return (
-      //   <div key={user.id} className="mb-2 border rounded">
-      //     <div className="flex p-2 justify-between items-center cursor-pointer">
-      //       {user.name}
-      //     </div>
-      //   </div>
-      // );
+      return <UsersListItem key={user.id} user={user} />
     });
   }
 
