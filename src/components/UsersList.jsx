@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useThunk } from '../hooks/use-thunk';
 import { fetchUsers, addUser } from '../store';
+import usersListItem from './usersListItem';
 import Skeleton from './Skeleton';
 import Button from './Button';
+
 
 
 
@@ -36,13 +38,14 @@ const UsersList = () => {
     content =  <div>error fetching data </div>;
   }else{
     content = data.map((user) => {
-      return (
-        <div key={user.id} className="mb-2 border rounded">
-          <div className="flex p-2 justify-between items-center cursor-pointer">
-            {user.name}
-          </div>
-        </div>
-      );
+      <usersListItem key={user.id} user={user} />
+      // return (
+      //   <div key={user.id} className="mb-2 border rounded">
+      //     <div className="flex p-2 justify-between items-center cursor-pointer">
+      //       {user.name}
+      //     </div>
+      //   </div>
+      // );
     });
   }
 
