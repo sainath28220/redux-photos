@@ -6,9 +6,12 @@ import ExpandablePanel from './ExpandablePanel';
 const AlbumsList = ({ user }) => {
   const { data, error, isLoading } = useFetchAlbumsQuery(user);
   const  [addAlbum, results] = useAddAlbumMutation(); //addAlbum is a function
+  // console.log(results);
+
   const handleClick = () => {
     addAlbum(user);
   };
+  
   let content;
   if(isLoading){
     content = <Skeleton times={3} />
