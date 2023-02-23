@@ -14,6 +14,7 @@ const store = configureStore({
   }
 })
 
+// console.log(store.getState())
 //setup listeners one time
 setupListeners(store.dispatch);
 
