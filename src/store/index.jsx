@@ -14,6 +14,9 @@ const store = configureStore({
   }
 })
 
+//Temporary
+// window.store = store
+
 // console.log(store.getState())
 //setup listeners one time
 setupListeners(store.dispatch);

@@ -34,8 +34,8 @@ const AlbumsList = ({ user }) => {
   //refetch: function tell the query to re run
   return (
   <>
-    <div>
-      Albums for {user.name} 
+    <div className='m-2 flex flex-row items-center justify-between'>
+      <h3 className='text-lg font-bold'>Albums for {user.name}</h3>
       <Button onClick={handleClick}>
         +Add Album
       </Button>

@@ -17,7 +17,6 @@ const UsersList = () => {
   // const [ creatingUserError,setCreatingUserError ] = useState(null);
   // const dispatch = useDispatch();
   const { data } = useSelector((state) => {
-    console.log(state)
     return state.users;
   });
 
@@ -34,9 +33,9 @@ const UsersList = () => {
     // .finally(()=>setIsCreatingUser(false));
   };
 
-  data.map((user) => {
-    console.log(user)
-  });
+  // data.map((user) => {
+  //   console.log(user)
+  // });
 
   let content;
   if (isLoadingUsers) {
